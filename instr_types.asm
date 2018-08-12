@@ -5,7 +5,7 @@
 0|opc4|mem8|rd3
 
 rd -- destination register (r0-r7)
-
+mem8 from 0 to 0xff
 
 add rd, [mem8]
 sub rd, [mem8]
@@ -46,6 +46,7 @@ c/u -- conditional(1) or unconditional
 z/c -- zero(0) or carry(1)
 i/n -- inverted(1) or not inverted flags 
 a/r -- absolute or PC-relative jump
+RES--reserved
 
 jmp imm8
 jc imm8
