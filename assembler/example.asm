@@ -1,14 +1,27 @@
-loop1:
-mov r0,0x80 
-mov r1,0x00
-mov r2,1
-mov [r1],r0
-loop2:
-add r0,0
-shr [r1], r2
-jz loop1 
-jmp loop3
-add r0,r0 
-div r0, r1
-loop3:
-jmp loop2 
+boot:
+mov r1, 0    ; addr
+mov r2, 72   ; sym
+orr r2, 0x80 ; mask
+mov [r1],r2  ; Send
+mov [r1],r1  ; clear
+
+mov r2, 101  ; sym
+orr r2, 0x80 ; mask
+mov [r1],r2  ; Send
+mov [r1],r3  ; clear
+
+mov r2, 108  ; sym
+orr r2, 0x80 ; mask
+mov [r1],r2  ; Send
+mov [r1],r3  ; clear
+
+mov r2, 108  ; sym
+orr r2, 0x80 ; mask
+mov [r1],r2  ; Send
+mov [r1],r3  ; clear
+
+mov r2, 111  ; sym
+orr r2, 0x80 ; mask
+mov [r1],r2  ; Send
+hlt:
+jmp hlt
